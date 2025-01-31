@@ -32,7 +32,7 @@ defaultMaximum = 40
 
 signals = []
 noOfSignals = 4
-simTime = 300       # change this to change time of simulation
+simTime = int(input("Enter Stimulation Time"))      # change this to change time of simulation
 timeElapsed = 0
 
 currentGreen = 0   # Indicates which signal is green
@@ -55,7 +55,7 @@ noOfRickshaws = 0
 noOfLanes = 2
 
 # Red signal time at which cars will be detected at a signal
-detectionTime = 5
+detectionTime = 3
 
 speeds = {'car':4, 'bus':3, 'truck':3, 'rickshaw':4, 'bike':4.5}  # average speeds of vehicles
 
@@ -361,11 +361,11 @@ def printStatus():
 	for i in range(0, noOfSignals):
 		if(i==currentGreen):
 			if(currentYellow==0):
-				print(" GREEN TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
+				print("  TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
 			else:
-				print("YELLOW TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
+				print(" TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
 		else:
-			print("   RED TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
+			print(" TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
 	print()
 
 # Update values of the signal timers after every second

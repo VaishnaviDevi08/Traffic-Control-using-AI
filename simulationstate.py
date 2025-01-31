@@ -32,7 +32,7 @@ defaultMaximum = 60
 
 signals = []
 noOfSignals = 4
-simTime = 300       # change this to change time of simulation
+simTime = int(input("Enter Stimulation Time"))       # change this to change time of simulation
 timeElapsed = 0
 
 currentGreen = 0   # Indicates which signal is green
@@ -362,11 +362,11 @@ def printStatus():
 	for i in range(0, noOfSignals):
 		if(i==currentGreen):
 			if(currentYellow==0):
-				print(" GREEN TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
+				print("  TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
 			else:
-				print("YELLOW TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
+				print(" TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
 		else:
-			print("   RED TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
+			print(" TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
 	print()
 
 # Update values of the signal timers after every second
